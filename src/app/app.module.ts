@@ -10,11 +10,19 @@ import { RouterLink, RouterOutlet } from "@angular/router";
 import { MatRippleModule } from "@angular/material/core";
 import { MatIconModule } from "@angular/material/icon";
 import { HttpClientModule } from '@angular/common/http';
+import { EmployeeDialogComponent } from './employee-dialog/employee-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatInputModule} from "@angular/material/input";
+import {FormsModule} from "@angular/forms";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {provideEnvironmentNgxMask, IConfig, NgxMaskDirective} from 'ngx-mask';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    EmployeeDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -25,9 +33,16 @@ import { HttpClientModule } from '@angular/common/http';
     RouterOutlet,
     MatRippleModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    MatInputModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    NgxMaskDirective
   ],
-  providers: [],
+  providers: [
+    provideEnvironmentNgxMask(),
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
