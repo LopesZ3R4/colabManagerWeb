@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ColabManagerWeb';
+  showEmployeeTable = false; // Variável para controlar a exibição da tabela
 }

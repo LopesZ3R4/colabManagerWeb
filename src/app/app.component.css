@@ -1,0 +1,80 @@
+/* app.component.css */
+
+/* Estilo de fundo escuro para todo o aplicativo */
+body {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Estilize a barra de ferramentas */
+.mat-toolbar {
+  background-color: #333333;
+  color: #ffffff;
+}
+.custom-toolbar {
+  height: 80px; /* Defina a altura desejada */
+  padding: 0 20px; /* Adicione espaçamento interno */
+  /* Adicione outras propriedades de estilo conforme necessário */
+}
+
+/* Estilize os botões */
+.mat-button {
+  background-color: #616161;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.mat-button:hover {
+  background-color: #424242;
+}
+
+/* Estilize o texto */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+}
+
+/* Estilize links */
+a {
+  color: #2196F3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilize a tabela */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #444444;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* Adicione estilos adicionais conforme necessário */
+
+/* Estilize inputs */
+input, textarea {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #555555;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* Adicione estilos específicos para outros componentes aqui */
+
