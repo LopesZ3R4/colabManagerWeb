@@ -1,0 +1,28 @@
+/* src/app/components/employee/employee.component.css */
+
+/* Estilize a tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+/* Estilize o cabeçalho da tabela */
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Estilize as células da tabela */
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Alterne a cor de fundo das linhas da tabela */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

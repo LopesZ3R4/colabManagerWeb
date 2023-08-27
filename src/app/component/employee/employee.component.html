@@ -1,0 +1,23 @@
+<!-- src/app/components/employee/employee.component.html -->
+<table>
+  <thead>
+  <tr>
+    <th (click)="sort('id')">ID</th>
+    <th (click)="sort('name')">Nome</th>
+    <th (click)="sort('codfuncao')">Código Função</th>
+    <th (click)="sort('salary')">Salário</th>
+    <th (click)="sort('dtnascimento')">Data de Nascimento</th>
+    <th (click)="sort('dtadmissao')">Data de Admissão</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let employee of sortedEmployees">
+    <td>{{ employee.id }}</td>
+    <td>{{ employee.name }}</td>
+    <td>{{ employee.codfuncao }}</td>
+    <td>{{ employee.salary }}</td>
+    <td>{{ employee.dtnascimento | date }}</td>
+    <td>{{ employee.dtadmissao | date }}</td>
+  </tr>
+  </tbody>
+</table>
