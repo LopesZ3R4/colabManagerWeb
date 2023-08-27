@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Employee} from "./employee";
 import { EmployeeService } from "../../service/employee.service";
 import {interval, startWith, switchMap} from "rxjs";
+import {EmployeeDialogComponent} from "../../employee-dialog/employee-dialog.component";
+import {MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-employee',
@@ -57,7 +59,8 @@ export class EmployeeComponent implements OnInit{
       }
     });
   }
-  constructor(private consultaEmployees: EmployeeService) {}
+  dialogRef: MatDialogRef<EmployeeDialogComponent> | null = null;
+  constructor(private consultaEmployees: EmployeeService, public dialog: MatDialog) {}
   private getEmployeeList() {
     this.consultaEmployees.getEmployeeList().subscribe(
       (data: Employee[]) => {
@@ -71,5 +74,38 @@ export class EmployeeComponent implements OnInit{
         console.log(error);
       }
     );
+  }
+
+  addEmployee() {
+    if (!this.dialogRef) { // Verifica se o diálogo não está aberto
+      const dialogConfig = new MatDialogConfig(); // Crie uma nova configuração de diálogo
+
+      dialogConfig.width = '400px';
+      dialogConfig.position = {
+        top: '50%', // Centraliza verticalmente
+        left: '50%' // Centraliza horizontalmente
+      };
+      this.dialogRef = this.dialog.open(EmployeeDialogComponent, {
+        width: '400px',
+        data: {} // Você pode passar dados iniciais se necessário
+      });
+
+      this.dialogRef.afterClosed().subscribe((result: Employee) => {
+        if (result) {
+          // Aqui você pode adicionar a lógica para adicionar o novo funcionário
+          // usando o serviço EmployeeService. Certifique-se de implementar isso.
+          this.sortedEmployees.push(result);
+        }
+        this.dialogRef = null; // Marca o diálogo como fechado
+      });
+    }
+  }
+
+    editEmployee() {
+
+  }
+
+  deleteEmployee() {
+
   }
 }

@@ -75,6 +75,8 @@ input, textarea {
   padding: 10px;
   border-radius: 4px;
 }
-
+.dark-text {
+  color: #fff; /* Cor do texto */
+}
 /* Adicione estilos específicos para outros componentes aqui */
 

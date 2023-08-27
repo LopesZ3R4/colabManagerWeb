@@ -4,8 +4,8 @@ export interface Employee {
   name: string;
   codfuncao: number;
   salary: number;
-  dtnascimento: Date;
-  dtadmissao: Date;
+  dtnascimento: string;
+  dtadmissao: string;
   [key: string]: number | string | Date;
 }
 export interface EmployeeListResponse {
