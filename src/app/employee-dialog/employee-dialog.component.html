@@ -1,6 +1,6 @@
 <!-- src/app/components/employee-dialog/employee-dialog.component.html -->
-<h2 mat-dialog-title class="dark-text">Incluir Funcionário</h2>
 <mat-dialog-content class="mat-dialog-container">
+  <h2 mat-dialog-title class="dark-text">Incluir Funcionário</h2>
   <mat-form-field>
     <label class="dark-text">Nome</label>
     <input matInput [(ngModel)]="newEmployee.name" placeholder="Nome">
@@ -21,9 +21,9 @@
     <label class="dark-text">Data de Admissao</label>
     <input matInput [(ngModel)]="newEmployee.dtadmissao" mask="00/00/0000">
   </mat-form-field>
-
+  <mat-dialog-actions class="mat-dialog-actions">
+    <button mat-button (click)="onCancelClick()">Cancelar</button>
+    <button mat-button color="primary" (click)="onSubmitClick()">Enviar</button>
+  </mat-dialog-actions>
 </mat-dialog-content>
-<mat-dialog-actions class="mat-dialog-actions">
-  <button mat-button (click)="onCancelClick()">Cancelar</button>
-  <button mat-button color="primary" (click)="onSubmitClick()">Enviar</button>
-</mat-dialog-actions>
+

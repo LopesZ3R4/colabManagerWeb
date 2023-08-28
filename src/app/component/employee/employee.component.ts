@@ -15,6 +15,7 @@ export class EmployeeComponent implements OnInit{
   sortedEmployees: Employee[] = this.employees;
   sortColumn: string = '';
   sortDirection: string = 'asc';
+  selectedEmployeeId: number | null = null;
   ngOnInit(): void {
     this.getEmployeeList();
 
@@ -75,6 +76,10 @@ export class EmployeeComponent implements OnInit{
       }
     );
   }
+  // Função para formatar o valor do salário com duas casas decimais
+  formatSalary(value: number): string {
+    return value.toFixed(2); // Formata para duas casas decimais
+  }
 
   addEmployee() {
     if (!this.dialogRef) { // Verifica se o diálogo não está aberto
@@ -95,17 +100,45 @@ export class EmployeeComponent implements OnInit{
           // Aqui você pode adicionar a lógica para adicionar o novo funcionário
           // usando o serviço EmployeeService. Certifique-se de implementar isso.
           this.sortedEmployees.push(result);
+          this.getEmployeeList();
         }
         this.dialogRef = null; // Marca o diálogo como fechado
       });
     }
   }
 
-    editEmployee() {
+  editEmployee() {
 
   }
 
-  deleteEmployee() {
-
+  deleteEmployee(): void {
+    if (this.selectedEmployeeId !== null) {
+      this.consultaEmployees.deleteEmployee(this.selectedEmployeeId).subscribe(
+        () => {
+          // Funcionário excluído com sucesso, atualize a lista de funcionários
+          console.log('Funcionario de id: '+this.selectedEmployeeId+' excluido!');
+          this.getEmployeeList();
+          // Limpe a seleção
+          this.selectedEmployeeId = null;
+        },
+        error => {
+          if (error.status === 204) {
+            // Resposta vazia (204) é tratada como sucesso
+            // Funcionário excluído com sucesso, atualize a lista de funcionários
+            console.log('Funcionario de id: '+this.selectedEmployeeId+' excluido!');
+            this.getEmployeeList();
+            // Limpe a seleção
+            this.selectedEmployeeId = null;
+          } else {
+            console.error('Erro ao excluir funcionário', error);
+          }
+        }
+      );
+    }
   }
+  selectEmployee(employeeId: number): void {
+    console.log('Funcionario Selecionado: '+employeeId);
+    this.selectedEmployeeId = employeeId;
+  }
+
 }

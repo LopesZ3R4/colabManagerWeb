@@ -1,8 +1,16 @@
 <!-- src/app/home/home.component.html -->
 <mat-toolbar color="primary" class="custom-toolbar">
-  <span>Minha Aplicação</span>
-  <button mat-button (click)="showEmployeeTable = !showEmployeeTable">Funcionários</button>
+  <span>Colab Manager</span>
+  <button mat-button (click)="showEmployeeTable = !showEmployeeTable" class="icon-button">
+    <div class="icon-container">
+      <img src="assets/images/iconfunc.png" alt="Ícone de Funcionário" class="icon-image">
+    </div>
+    <div class="text-container">
+      <span class="button-text">Funcionários</span>
+    </div>
+  </button>
 </mat-toolbar>
+
 
 <!-- Condição para mostrar a tabela de funcionários -->
 <div *ngIf="showEmployeeTable">

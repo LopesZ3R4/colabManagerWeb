@@ -26,3 +26,20 @@ td {
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+
+/* Estilo para linha selecionada */
+tr.selected {
+  background-color: #007bff; /* Tom de azul */
+  color: #fff; /* Cor do texto na linha selecionada */
+}
+
+/* Efeito de hover na linha */
+tr:hover {
+  background-color: #ddd; /* Tom de cinza mais escuro */
+}
+.resizable {
+  resize: horizontal; /* Permite redimensionamento horizontal */
+  overflow: hidden;  /* Oculta o conteúdo que excede a largura */
+  min-width: 50px;   /* Largura mínima inicial */
+  max-width: 400px;   /* Largura máxima inicial */
+}

@@ -5,6 +5,28 @@ body {
   background-color: #121212;
   color: #ffffff;
 }
+.icon-button {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.icon-container {
+  margin-bottom: 4px; /* Espaço entre o ícone e o texto */
+}
+
+.icon-image {
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.text-container {
+  text-align: center;
+}
+
+.button-text {
+  font-size: 12px; /* Ajuste o tamanho do texto conforme necessário */
+}
 
 /* Estilize a barra de ferramentas */
 .mat-toolbar {

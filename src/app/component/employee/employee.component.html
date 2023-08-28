@@ -7,22 +7,25 @@
 <table>
   <thead>
   <tr>
-    <th (click)="sort('id')">ID</th>
-    <th (click)="sort('name')">Nome</th>
-    <th (click)="sort('codfuncao')">Código Função</th>
-    <th (click)="sort('salary')">Salário</th>
-    <th (click)="sort('dtnascimento')">Data de Nascimento</th>
-    <th (click)="sort('dtadmissao')">Data de Admissão</th>
+    <th (click)="sort('id')" class="resizable">ID</th>
+    <th (click)="sort('name')" class="resizable">Nome</th>
+    <th (click)="sort('codfuncao')" class="resizable">Código Função</th>
+    <th (click)="sort('salary')" class="resizable">Salário</th>
+    <th (click)="sort('dtnascimento')" class="resizable">Data de Nascimento</th>
+    <th (click)="sort('dtadmissao')" class="resizable">Data de Admissão</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let employee of sortedEmployees">
+  <tr *ngFor="let employee of sortedEmployees"
+      [ngClass]="{ 'selected': employee.id === selectedEmployeeId }"
+      (click)="selectEmployee(employee.id)">
     <td>{{ employee.id }}</td>
     <td>{{ employee.name }}</td>
     <td>{{ employee.codfuncao }}</td>
-    <td>{{ employee.salary }}</td>
-    <td>{{ employee.dtnascimento | date }}</td>
-    <td>{{ employee.dtadmissao | date }}</td>
+    <td>{{ formatSalary(employee.salary) }}</td>
+    <td>{{ employee.dtnascimento | date:'dd/MM/yyyy' }}</td>
+    <td>{{ employee.dtadmissao | date:'dd/MM/yyyy' }}</td>
+
   </tr>
   </tbody>
 </table>
