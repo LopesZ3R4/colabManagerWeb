@@ -1,27 +1,26 @@
-# ColabManagerWeb
+# Employee Manager
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+**Employee Manager - Angular Frontend**
 
-## Development server
+This project serves as the frontend for the Employee Manager application, which is built using Angular and interacts with a Java Spring backend and a PostgreSQL database.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Overview
 
-## Code scaffolding
+The primary focus of this project is to create a simple CRUD (Create, Read, Update, Delete) interface to manage employee information, including their name, role, salary, date of birth, and date of joining. However, this is just the foundation for a more comprehensive and ambitious system.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Future Features
 
-## Build
+The goal behind this project is to expand its functionality over time. I plan to add various features, such as:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Payments**: Integration of employee payment information, including salary calculations, bonuses, deductions, and payment history.
+- **Roles and Departments**: Addition of role and department categories for better organization and segmentation of employees.
+- **Transfers**: Implementation of features to record and manage employee transfers between departments or locations.
+- **Reports and Analytics**: Creation of tools to generate reports and analyses on various aspects of employees and the company.
 
-## Running unit tests
+## Public Access
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This repository is public to share progress, ideas, and development of the project with the wider community. I encourage anyone interested to explore the code, make suggestions, and contribute constructively.
 
-## Running end-to-end tests
+## Contribution
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+If you would like to contribute to this project, feel free to open pull requests, report issues, or provide feedback. Contributions from all skill levels are welcome, and together we can make this project a powerful and comprehensive tool for employee management.
