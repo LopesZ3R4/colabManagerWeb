@@ -108,7 +108,20 @@ export class EmployeeComponent implements OnInit{
   }
 
   editEmployee() {
+    // Buscar o funcionário na lista de employees com base no ID
+    const existingEmployee = this.employees.find(employee => employee.id === this.selectedEmployeeId);
+    // Verificar se o funcionário foi encontrado
+    if (existingEmployee) {
+      const dialogRef = this.dialog.open(EmployeeDialogComponent, {
+        data: existingEmployee // Passar o funcionário para o diálogo
+      });
 
+      dialogRef.afterClosed().subscribe(result => {
+        // ... (handle dialog closed event if needed)
+      });
+    } else {
+      console.error('Funcionário não encontrado na lista de employees');
+    }
   }
 
   deleteEmployee(): void {

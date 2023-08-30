@@ -13,25 +13,75 @@
 }
 
 .mat-dialog-container {
-  width: 300px; /* Tamanho menor */
-  max-height: 80vh; /* Altura máxima de 80% da altura da tela */
-  overflow-y: auto; /* Adiciona uma barra de rolagem vertical se o conteúdo for muito grande */
+  width: auto; /* Remova a largura fixa */
+  max-width: 100vw; /* Defina uma largura máxima em relação à largura da janela */
+  max-height: 80vh; /* Defina uma altura máxima em relação à altura da janela */
+  overflow: auto; /* Adicione a propriedade overflow para controlar a exibição de barras de rolagem */
+  overflow-x: hidden; /* Remova a barra de rolagem horizontal */
   padding: 20px;
   background-color: #222; /* Cor de fundo escura */
   color: #fff; /* Cor do texto claro */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-.mat-form-field-label,
-.mat-input-wrapper {
-  color: #fff; /* Cor do texto claro para os rótulos e inputs */
+
+
+.light-text {
+  color: #f0f0f0; /* Cor do texto claro */
+  margin: 0; /* Remover margem padrão do título */
 }
-.mat-dialog-content {
+
+.large-title {
+  font-size: 24px; /* Aumentar o tamanho do título */
+  margin: 0; /* Remover margem padrão do título */
+}
+
+.form-field {
   display: flex;
   flex-direction: column;
+  margin: 0; /* Remover margem padrão do título */
+  align-items: flex-start; /* Alinhar labels e inputs à esquerda */
+  width: 100%; /* Preencher o espaço disponível */
+}
+
+.mat-form-field-label {
+  font-size: 14px; /* Ajustar o tamanho da fonte do rótulo */
+}
+.mat-form-field-infix {
+  padding-left: 0;
+}
+
+.mat-input-wrapper {
+  font-size: 14px; /* Ajustar o tamanho da fonte do input */
+  width: 100%; /* Preencher o espaço disponível */
+}
+
+.button-container {
+  margin-top: 20px; /* Espaçamento entre os campos e os botões */
+  display: flex;
+  flex-direction: column; /* Alinhar os botões verticalmente */
 }
 
 .mat-dialog-actions {
   display: flex;
   justify-content: space-between;
+}
+button[mat-button]:first-of-type {
+  background-color: #f44336;
+}
+
+button[mat-button]:first-of-type:hover {
+  background-color: #d32f2f;
+}
+
+button[mat-button] {
+  background-color: #3f51b5;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+button[mat-button]:hover {
+  background-color: #303f9f;
 }

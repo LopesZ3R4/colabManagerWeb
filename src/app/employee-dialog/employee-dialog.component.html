@@ -1,29 +1,30 @@
-<!-- src/app/components/employee-dialog/employee-dialog.component.html -->
 <mat-dialog-content class="mat-dialog-container">
-  <h2 mat-dialog-title class="dark-text">Incluir Funcionário</h2>
-  <mat-form-field>
-    <label class="dark-text">Nome</label>
-    <input matInput [(ngModel)]="newEmployee.name" placeholder="Nome">
+  <h2 mat-dialog-title class="light-text large-title">Incluir Funcionário</h2>
+  <br>
+  <mat-form-field class="form-field">
+    <label class="light-text">Nome</label>
+    <input matInput [(ngModel)]="employee.name" >
   </mat-form-field>
-  <mat-form-field>
-    <label class="dark-text">Código da Função</label>
-    <input matInput [(ngModel)]="newEmployee.codfuncao" placeholder="Código Função">
+  <mat-form-field class="form-field">
+    <label class="light-text">Código da Função</label>
+    <input matInput [(ngModel)]="employee.codfuncao">
   </mat-form-field>
-  <mat-form-field>
-    <label class="dark-text">Salário</label>
-    <input matInput [(ngModel)]="newEmployee.salary" placeholder="00000,00" mask="separator.2">
+  <mat-form-field class="form-field">
+    <label class="light-text">Salário</label>
+    <input matInput [(ngModel)]="employee.salary"  mask="separator.2">
   </mat-form-field>
-  <mat-form-field>
-    <label class="dark-text">Data de Nascimento</label>
-    <input matInput [(ngModel)]="newEmployee.dtnascimento" mask="00/00/0000">
+  <mat-form-field class="form-field">
+    <label class="light-text">Data de Nascimento</label>
+    <input matInput [(ngModel)]="employee.dtnascimento" mask="00/00/0000">
   </mat-form-field>
-  <mat-form-field>
-    <label class="dark-text">Data de Admissao</label>
-    <input matInput [(ngModel)]="newEmployee.dtadmissao" mask="00/00/0000">
+  <mat-form-field class="form-field">
+    <label class="light-text">Data de Admissao</label>
+    <input matInput [(ngModel)]="employee.dtadmissao" mask="00/00/0000">
   </mat-form-field>
-  <mat-dialog-actions class="mat-dialog-actions">
-    <button mat-button (click)="onCancelClick()">Cancelar</button>
-    <button mat-button color="primary" (click)="onSubmitClick()">Enviar</button>
-  </mat-dialog-actions>
+  <div class="button-container">
+    <mat-dialog-actions class="mat-dialog-actions">
+      <button mat-button color="primary"  (click)="onCancelClick()">Cancelar</button>
+      <button mat-button color="primary" (click)="onSubmitClick()">Enviar</button>
+    </mat-dialog-actions>
+  </div>
 </mat-dialog-content>
-
